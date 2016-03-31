@@ -24,12 +24,11 @@ test("Checking filter button panel when popularity button is selected", function
 	
 	var driver = createDriver(url, "1400x1100", "firefox");
 		
-	logged("Checking filter button panel when popularity button is selected", function () {
+    logged("Checking filter button panel when popularity button is selected", function () {
         checkLayout(driver, "specs/components/filters.gspec", ["popularitySelected"]);
     })
-	
-	
-	driver.close();
+		
+    driver.close();
 });
 
 test("Checking filter button panel when popularity buttons is selected and new button is hovered", function () {
@@ -61,10 +60,9 @@ test("Checking filter button panel when popularity buttons is selected and new b
 	var filterButtonsPanel = new FilterButtonsPanel(driver);
 	filterButtonsPanel.hoverNewButton();
 	
-	logged("Checking filter button panel when popularity buttons is selected and new button is hovered", function () {
+    logged("Checking filter button panel when popularity buttons is selected and new button is hovered", function () {
         checkLayout(driver, "specs/components/filters.gspec", ["hoveredNewButton"]);
     })
-	
-	
-	driver.close();
+		
+    driver.close();
 });
