@@ -1,8 +1,8 @@
 @import ../common-data.gspec
 
 @objects
-    filter-sort-buttons-panel               id      filter-sort-buttons
-	popularityButton  						xpath	//*[@id='filter-sort-buttons']/label[1]
+    filter-sort-buttons-panel				id      filter-sort-buttons
+	popularityButton						xpath	//*[@id='filter-sort-buttons']/label[1]
 	newButton								xpath	//*[@id='filter-sort-buttons']/label[2]
 	lowestPriceButton						xpath	//*[@id='filter-sort-buttons']/label[3]
 	highestPriceButton						xpath	//*[@id='filter-sort-buttons']/label[4]
