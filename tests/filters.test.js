@@ -23,7 +23,7 @@ test("Checking filter button panel when popularity button is selected", function
 		
         FAIL
         If any of expected values is not found
-	*/
+    */
 	
     var driver = createDriver(url, "1400x1100", "firefox");
 		
