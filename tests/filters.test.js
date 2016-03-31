@@ -35,7 +35,7 @@ test("Checking filter button panel when popularity button is selected", function
 });
 
 test("Checking filter button panel when popularity buttons is selected and new button is hovered", function () {
-	/*	
+    /*	
         Steps:
         1.Open {$url}
         2.Hover button New
@@ -56,7 +56,7 @@ test("Checking filter button panel when popularity buttons is selected and new b
 		
         FAIL
         If any of expected values is not found
-	*/		
+    */		
 	
     var driver = createDriver(url, "1400x1100", "firefox");
 			
