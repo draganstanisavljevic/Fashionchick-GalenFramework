@@ -1,4 +1,4 @@
-Galen Sample Tests
+<h1>Galen Sample Tests</h1>
 
 This project is used in order to demonstrate the features of Galen Framework.
 
