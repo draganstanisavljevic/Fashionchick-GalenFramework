@@ -18,7 +18,7 @@
 = Filter Sort Buttons Panel section =
     filter-sort-buttons-panel:
         height = 55 px
-		width 100 % of content/width 
+        width 100 % of content/width
 
 
 == Buttons section ==	
