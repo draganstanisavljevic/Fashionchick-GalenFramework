@@ -20,7 +20,7 @@ For more information about Galen installation, visit page http://galenframework.
 
 <h2>Description</h2>
 
-This test scenario checks layout of the filter button panel on the page http://www.fashionchick.co.uk/sale_shopping/ 
+These test scenarios check layout of the filter button panel on the page http://www.fashionchick.co.uk/sale_shopping/ 
 
 
 <h2>Report</h2>
