@@ -23,37 +23,37 @@
 
 == Buttons section ==	
 	
-	popularityButton: 
-		height = ${button_height}
-		width = 101 px
-		inside filter-sort-buttons-panel 71px left, 0px top, 34px bottom 
+    popularityButton:
+        height = ${button_height}
+        width = 101 px
+        inside filter-sort-buttons-panel 71px left, 0px top, 34px bottom
 		
-	newButton:
-		height = ${button_height}
-		width = 38 px
-		inside filter-sort-buttons-panel 1px top, 33px bottom 
-		right-of popularityButton ${distance_between_buttons} 
+    newButton:
+        height = ${button_height}
+        width = 38 px
+        inside filter-sort-buttons-panel 1px top, 33px bottom
+        right-of popularityButton ${distance_between_buttons}
 	
-	lowestPriceButton:
-		height = ${button_height}
-		width = 86 px
-		inside filter-sort-buttons-panel 1px top, 33px bottom 
-		right-of newButton ${distance_between_buttons} 
+    lowestPriceButton:
+        height = ${button_height}
+        width = 86 px
+        inside filter-sort-buttons-panel 1px top, 33px bottom
+        right-of newButton ${distance_between_buttons}
 		
-	highestPriceButton:
-		height = ${button_height}
-		width = 89 px
-		inside filter-sort-buttons-panel 1px top, 33px bottom,  
-		right-of lowestPriceButton ${distance_between_buttons} 
+    highestPriceButton:
+        height = ${button_height}
+        width = 89 px
+        inside filter-sort-buttons-panel 1px top, 33px bottom,
+        right-of lowestPriceButton ${distance_between_buttons}
 		
     @on popularitySelected
         newButton:
             color-scheme 75 to 80 % white
-		popularityButton:
-			color-scheme 3 to 6 % #272727, 70 to 72 % white
+        popularityButton:
+            color-scheme 3 to 6 % #272727, 70 to 72 % white
 
-	@on hoveredNewButton
-		newButton:
-			css color is "rgba(75, 181, 169, 1)"
-		popularityButton:
-			color-scheme 3 to 6 % #272727, 70 to 72 % white
+    @on hoveredNewButton
+        newButton:
+            css color is "rgba(75, 181, 169, 1)"
+        popularityButton:
+            color-scheme 3 to 6 % #272727, 70 to 72 % white
