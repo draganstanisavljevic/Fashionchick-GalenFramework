@@ -12,7 +12,7 @@
 	
 @set
     button_height    21 px
-	distance_between_buttons	16 px
+    distance_between_buttons	16 px
 
 
 = Filter Sort Buttons Panel section =
