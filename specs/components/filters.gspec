@@ -4,22 +4,21 @@
     filter-sort-buttons-panel               id      filter-sort-buttons
 	popularityButton  						xpath	//*[@id='filter-sort-buttons']/label[1]
 	newButton								xpath	//*[@id='filter-sort-buttons']/label[2]
-	lowestPrice								xpath	//*[@id='filter-sort-buttons']/label[3]
-	highestPrice							xpath	//*[@id='filter-sort-buttons']/label[4]
+	lowestPriceButton						xpath	//*[@id='filter-sort-buttons']/label[3]
+	highestPriceButton						xpath	//*[@id='filter-sort-buttons']/label[4]
 	
 @groups
-    buttons       popularityButton, newButton, lowestPrice, highestPrice	
+    buttons       popularityButton, newButton, lowestPriceButton, highestPriceButton	
 	
 @set
     button_height    21 px
-	distance_between_buttons	16px
+	distance_between_buttons	16 px
 
 
 = Filter Sort Buttons Panel section =
     filter-sort-buttons-panel:
         height = 55 px
 		width 100 % of content/width 
-		text is "Sort by: popularity new lowest price highest price"
 
 
 == Buttons section ==	
@@ -28,7 +27,6 @@
 		height = ${button_height}
 		width = 101 px
 		inside filter-sort-buttons-panel 71px left, 1px top, 33px bottom 
-		color-scheme 3 to 6 % #272727, 70 to 72 % white, 1 to 5 % #45B5AA, 1 to 5 % #4bb5a9
 		
 	newButton:
 		height = ${button_height}
@@ -36,22 +34,26 @@
 		inside filter-sort-buttons-panel 1px top, 33px bottom 
 		right-of popularityButton ${distance_between_buttons} 
 	
-	lowestPrice:
+	lowestPriceButton:
 		height = ${button_height}
 		width = 86 px
 		inside filter-sort-buttons-panel 1px top, 33px bottom 
 		right-of newButton ${distance_between_buttons} 
 		
-	highestPrice:
+	highestPriceButton:
 		height = ${button_height}
 		width = 89 px
 		inside filter-sort-buttons-panel 1px top, 33px bottom,  
-		right-of lowestPrice ${distance_between_buttons} 
+		right-of lowestPriceButton ${distance_between_buttons} 
 		
-    @on usual
+    @on popularitySelected
         newButton:
-            color-scheme 3 to 6 % blue, 75 to 80 % white
+            color-scheme 75 to 80 % white
+		popularityButton:
+			color-scheme 3 to 6 % #272727, 70 to 72 % white
 
-	@on hovered
+	@on hoveredNewButton
 		newButton:
 			color-scheme 30 to 36 % #4bb5a9, 75 to 80 % white
+		popularityButton:
+			color-scheme 3 to 6 % #272727, 70 to 72 % white

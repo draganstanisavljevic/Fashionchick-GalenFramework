@@ -6,7 +6,11 @@ this.FilterButtonsPanel = function (driver) {
 	
 	hoverNewButton: function () {
       this.newBut.hover();
-    }
+    },
+	
+	clickNewButton: function () {
+      this.newBut.click();
+    }	
 
   });
 };
