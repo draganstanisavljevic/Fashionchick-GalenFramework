@@ -54,6 +54,6 @@
 
 	@on hoveredNewButton
 		newButton:
-			color-scheme 30 to 36 % #4bb5a9, 75 to 80 % white
+			css color is "rgba(75, 181, 169, 1)"
 		popularityButton:
 			color-scheme 3 to 6 % #272727, 70 to 72 % white
