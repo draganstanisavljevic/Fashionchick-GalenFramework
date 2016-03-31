@@ -22,7 +22,7 @@ test("Checking filter button panel when popularity button is selected", function
 		If any of expected values is not found
 	*/
 	
-	var driver = createDriver(url, "1400x1100", "firefox");
+    var driver = createDriver(url, "1400x1100", "firefox");
 		
     logged("Checking filter button panel when popularity button is selected", function () {
         checkLayout(driver, "specs/components/filters.gspec", ["popularitySelected"]);
@@ -55,10 +55,10 @@ test("Checking filter button panel when popularity buttons is selected and new b
 		Production
 	*/		
 	
-	var driver = createDriver(url, "1400x1100", "firefox");
+    var driver = createDriver(url, "1400x1100", "firefox");
 			
-	var filterButtonsPanel = new FilterButtonsPanel(driver);
-	filterButtonsPanel.hoverNewButton();
+    var filterButtonsPanel = new FilterButtonsPanel(driver);
+    filterButtonsPanel.hoverNewButton();
 	
     logged("Checking filter button panel when popularity buttons is selected and new button is hovered", function () {
         checkLayout(driver, "specs/components/filters.gspec", ["hoveredNewButton"]);
