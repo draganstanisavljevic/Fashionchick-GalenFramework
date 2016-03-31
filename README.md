@@ -10,4 +10,10 @@ galen test tests/filters.test.js --htmlreport reports
 
 in folder Fashionchick-GalenFramework or click on start.bat file.
 
+If you do not have installed Galen, you can install it via the following command
+
+npm install -g galenframework-cli
+
+For more information about Galen installation, visit page http://galenframework.com/docs/getting-started-install-galen/
+
 
