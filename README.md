@@ -23,8 +23,6 @@ For more information about Galen installation, visit page http://galenframework.
 This test scenario checks layout of the filter button panel on the page http://www.fashionchick.co.uk/sale_shopping/ 
 
 
-<img src="https://lh3.googleusercontent.com/-lrQHctipif0/VvvLtr58HrI/AAAAAAAADRs/KH1pDuXG4GkD-3xN9yyPHxGTkLOOtCU4g/s1600/filter.jpg"/>
-
 <h2>Report</h2>
 
 After running test, open file report/report.html to see test result. Test contains some wrong expected values in order to show how Galen reports errors.
