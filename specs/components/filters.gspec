@@ -26,7 +26,7 @@
 	popularityButton: 
 		height = ${button_height}
 		width = 101 px
-		inside filter-sort-buttons-panel 71px left, 1px top, 33px bottom 
+		inside filter-sort-buttons-panel 71px left, 0px top, 34px bottom 
 		
 	newButton:
 		height = ${button_height}
