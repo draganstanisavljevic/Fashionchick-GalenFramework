@@ -1,12 +1,14 @@
 <h1>Galen Sample Tests</h1>
 
+<h2>Instalation</h2>
+
 This project is used in order to demonstrate the features of Galen Framework.
 
-http://www.fashionchick.co.uk
+The web application that it is testing is http://www.fashionchick.co.uk
 
 If you have Galen Framework installed you can just checkout this project and run it with the following command:
 
-galen test tests/filters.test.js --htmlreport reports
+<em>galen test tests/filters.test.js --htmlreport reports</em>
 
 in folder Fashionchick-GalenFramework or click on start.bat file.
 
