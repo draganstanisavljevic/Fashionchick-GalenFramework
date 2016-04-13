@@ -1,1 +1,1 @@
-galen test tests/filters.test.js --htmlreport reports
+galen test tests/categoriesHeaderMenu.test.js --htmlreport reports -Denv=prod

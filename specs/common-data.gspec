@@ -1,2 +1,23 @@
 @objects
+	page-container					css		page-container
+	navbar-branding					id		navbar-branding
+	navbar-mainmenu					id		navbar-mainmenu
+	categories-header-menu 			id      header-navbar-container
+	breadcrumbs						id		breadcrumbs
 	content							id		content
+
+@set
+	distance_between_categories_and_navbar_menu			1px
+	distance_between_breadcrumbs_and_categories			17px
+	categories_height									50 to 54px
+	
+= Categories header menu section =
+	categories-header-menu:
+		below navbar-mainmenu 		${distance_between_categories_and_navbar_menu}
+		height						${categories_height}	
+		color-scheme 				90 to 95 % #f4f4f2
+		text singleline is			"Sale Clothing Shoes Bags Accessories Jewellery Swimwear Intimates Designer Fashion"
+		
+= Breadcrumbs section =
+	breadcrumbs:
+		below categories-header-menu	${distance_between_breadcrumbs_and_categories}

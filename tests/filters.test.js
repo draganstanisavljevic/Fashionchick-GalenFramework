@@ -1,3 +1,4 @@
+load("init.js");
 load("pages/filterButtonPanel.js");
 
 var url = "http://www.fashionchick.co.uk/c/clothing/1/";

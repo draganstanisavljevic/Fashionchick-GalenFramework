@@ -19,6 +19,7 @@
     filter-sort-buttons-panel:
         height = 55 px
         width 100 % of content/width
+		text singleline is "Sort by: popularity new lowest price highest price"
 
 
 == Buttons section ==	
@@ -51,8 +52,8 @@
             color-scheme 75 to 80 % white
         popularityButton:
             color-scheme 3 to 6 % #272727, 70 to 72 % white
-
     @on hoveredNewButton
+
         newButton:
             css color is "rgba(75, 181, 169, 1)"
         popularityButton:
