@@ -1,1 +1,1 @@
-galen test tests/categoriesHeaderMenu.test.js --htmlreport reports -Denv=prod
+galen test tests/quickView.test.js --htmlreport reports -Denv=prod -Durl="http://www.fashionchick.co.uk/"
