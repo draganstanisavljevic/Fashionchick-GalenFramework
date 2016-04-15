@@ -1,1 +1,1 @@
-galen test tests/quickView.test.js --htmlreport reports -Denv=prod -Durl="http://www.fashionchick.co.uk/"
+galen test tests/quickViewWithList.test.js --htmlreport reports -Denv=prod -Durl="http://www.fashionchick.co.uk/"  -Dbrowser="firefox" -Dresolution="1400x1100"

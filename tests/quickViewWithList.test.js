@@ -2,6 +2,7 @@ load("init.js");
 load("pages/ProductOverview.js");
 load("pages/QuickViewWindow.js");
 load("pages/categoriesHeaderMenu.js");
+load("pages/ProductOverviewItem.js");
 
 var url = System.getProperty("url");
 var browser = System.getProperty("browser");
@@ -28,11 +29,21 @@ test("Close quick-view pop up", function () {
 	var categoriesHeaderMenu = new CategoriesHeaderMenu(driver);
 	categoriesHeaderMenu.clickClothingButton();
 
-	productOverview.hoverProduct();	
-	//store 'By At ...' text of first product, to compare with value after closing Quick View
-	var buyAtBeforeOpeningQuickView = productOverview.buyAtLinkText.getText();
+	var productOverviewList = new ProductsOverviwPage(driver);	
 	
-	productOverview.clickQuickViewButton();	
+	for (var i = 0; i < productOverviewList.productList.size(); i++) {
+		console.log("i=" + i);
+	  console.log("Price =" + productOverviewList.productList.get(i).price.getText());
+	  console.log("\nLink =" + productOverviewList.productList.get(i).buyAtLinkText.attribute("href"));
+	}
+
+	productOverviewList.productList.get(0).hoverProduct();
+
+/*	
+	//store 'By At ...' text of first product, to compare with value after closing Quick View
+	var buyAtBeforeOpeningQuickView = productOverviewList.productList.get(0).buyAtLinkText.getText();
+	
+	productOverviewList.productList.get(0).clickQuickViewButton();	
 	quickViewWindow.waitForIt();
 	quickViewWindow.clickCloseButton();
 
@@ -51,20 +62,23 @@ test("Close quick-view pop up", function () {
 			throw("Quick View Window is not closed");
 		}
 	}
-	
+*/	
+/*	
 	var expectedUrl = url + urlSuffixAfterCancalingPopupWindow;
 	if(!driver.getCurrentUrl().equals(expectedUrl)){
 			this.report.error("Wrong Page is loaded after closing Quick View Window").withAttachment("Screenshot", takeScreenshot(driver));
 			throw("\nWrong Page is loaded after closing Quick View Window. \nExpected URL = " + expectedUrl + "\nCurrent URL = " + driver.getCurrentUrl()+"\n");
 	}
 	
-	productOverview.hoverProduct();
+	productOverviewList.productList.get(0).hoverProduct();
 	GalenPages.sleep(1000);
 
-	var buyAtAfterClosingQuickView = productOverview.buyAtLinkText.getText();
+	var buyAtAfterClosingQuickView = productOverviewList.productList.get(0).buyAtLinkText.getText();
 	if(!buyAtAfterClosingQuickView.equals(buyAtBeforeOpeningQuickView)){
 		throw("\nWrong Bay At Text found after closing Quick View Window. \nExpected  = " + buyAtBeforeOpeningQuickView + "\nFound = " + buyAtAfterClosingQuickView +"\n");
 	}
+	
+	*/
 			
 });
 
