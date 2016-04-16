@@ -1,10 +1,11 @@
-this.Product = $page("Note", {
+this.Product = $page("Product", {
 	price:				"span.current-price",
 	buyAtLinkText:		"a",
-	quickViewButton:    "a.quickview",
+	//quickViewButton:    "a.quickview",
+	quickViewButton:    "//*[@id='product-overview']/article[1]/div[1]/a[2]", // xpath locator
 	
     hoverProduct: function () {
-         this.quickViewButton.hover();
+         this.price.click();
     },	
 
 	clickByAtButton: function () {
@@ -17,7 +18,11 @@ this.Product = $page("Note", {
 	
     clickQuickViewButton: function () {
        this.quickViewButton.click();
-        }		
+    },	
+
+    clickQuickViewButton: function () {
+       this.quickViewButton.click();
+    }	
 	
 });
 

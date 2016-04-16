@@ -1,6 +1,6 @@
 load("init.js");
 load("pages/ProductsOverview.js");
-//load("pages/QuickViewWindow.js");
+load("pages/SortButtonsPanel.js");
 load("pages/categoriesHeaderMenu.js");
 
 var url = System.getProperty("url");
@@ -17,32 +17,23 @@ afterTest(function (testInfo) {
     driver.close();
 });
 
-/*
 
-this.NoteComponent = $page("Note", {
-	price:				"span.current-price",
-});
-
-this.MyNotesPage = $page("My notes page", {
-  myNotes: $list(NoteComponent, "article.product-box.gi")
-});
-
-*/
-
-
-test("Test quick out", function () {
+test("Test sort by highest price", function () {
 	//Environments: All environments
-	//Steps: Open any category page and click on 'By at ...' link
+	//Steps: Open any category page and click button 'Sort by  'By at ...' link
 	//Expected: Correct web shop page is opened
 	
 	//var productOverview = new ProductsOverview(driver);
-	//var quickViewWindow = new QuickViewWindow(driver);
+	var sortButtonsPanel = new SortButtonsPanel(driver);
 	var categoriesHeaderMenu = new CategoriesHeaderMenu(driver);
 	categoriesHeaderMenu.clickClothingButton();
+	sortButtonsPanel.clickHighestPriceButton();
+	
+	GalenPages.sleep(6000);
 	
 	
 	var productsOverviewList = new ProductsOverviwPage(driver);
-	//productOverviewList.productList.get(0).hoverByAtButton();
+	productsOverviewList.productList.get(0).hoverProduct();
 	productsOverviewList.productList.get(0).clickByAtButton();
 		
 	
