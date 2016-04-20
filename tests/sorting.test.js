@@ -20,8 +20,8 @@ afterTest(function (testInfo) {
 
 test("Test sort by highest price", function () {
 	//Environments: All environments
-	//Steps: Open any category page and click button 'Sort by  'By at ...' link
-	//Expected: Correct web shop page is opened
+	//Steps: Open any category page and click button 'Sort by highest price'
+	//Expected: all products are sorted by highest price
 	
 	//var productOverview = new ProductsOverview(driver);
 	var sortButtonsPanel = new SortButtonsPanel(driver);
@@ -29,13 +29,85 @@ test("Test sort by highest price", function () {
 	categoriesHeaderMenu.clickClothingButton();
 	sortButtonsPanel.clickHighestPriceButton();
 	
-	GalenPages.sleep(6000);
-	
+	GalenPages.sleep(6000);	
 	
 	var productsOverviewList = new ProductsOverviwPage(driver);
-	productsOverviewList.productList.get(0).hoverProduct();
-	productsOverviewList.productList.get(0).clickByAtButton();
-		
+	var price;
+	var pricesConvertedToFloat = [];
+	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
+
+		price = productsOverviewList.productList.get(i).price.getText().replace(",",""); 
+		//replace function produces exception "(function,java.lang.String) is ambiguous;"
+		//I avoided it by constructing a JavaScript string
+		price = price + "";
+		//remove all except digits and '.'
+		price = price.replace(/[^0-9\\.]+/g, "");
+		console.log("price=" + price);
+		pricesConvertedToFloat.push(parseFloat(price));
+	}
+
+	var previousPrice = pricesConvertedToFloat[0];
+	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
+		console.log("pricesConvertedToFloat["+i+"]=" + pricesConvertedToFloat[i]);
+		if(pricesConvertedToFloat[i] > previousPrice){
+			//attach screenshot to the report
+			this.report.error("Prices are not sorted").withAttachment("Screenshot", takeScreenshot(driver));
+			throw "\nArray is not sorted. Price " + pricesConvertedToFloat + " is found before " + previousPrice + "\n" ;
+		}
+		previousPrice = pricesConvertedToFloat[i];
+	}
+	
+	if (pricesConvertedToFloat == previousPrice ){
+		//attach screenshot to the report
+		this.report.error("It is not possible to validate sorting").withAttachment("Screenshot", takeScreenshot(driver));
+		throw "\nAll products on this page have same price. It is not possible to validate that sorting works properly. You should verify manualy this test case." ;
+	}
+	
+});
+
+test("Test sort by lowest price", function () {
+	//Environments: All environments
+	//Steps: Open any category page and click button 'Sort by lowest price'
+	//Expected: all products are sorted by lowest price
+	
+	var sortButtonsPanel = new SortButtonsPanel(driver);
+	var categoriesHeaderMenu = new CategoriesHeaderMenu(driver);
+	categoriesHeaderMenu.clickClothingButton();
+	sortButtonsPanel.clickLowestPriceButton();
+	
+	GalenPages.sleep(6000);	
+	
+	var productsOverviewList = new ProductsOverviwPage(driver);
+	var price;
+	var pricesConvertedToFloat = [];
+	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
+
+		price = productsOverviewList.productList.get(i).price.getText().replace(",",""); 
+		//replace function produces exception "(function,java.lang.String) is ambiguous;"
+		//I avoided it by constructing a JavaScript string
+		price = price + "";
+		//remove all except digits and '.'
+		price = price.replace(/[^0-9\\.]+/g, "");
+		console.log("price=" + price);
+		pricesConvertedToFloat.push(parseFloat(price));
+	}
+
+	var previousPrice = pricesConvertedToFloat[0];
+	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
+		console.log("pricesConvertedToFloat["+i+"]=" + pricesConvertedToFloat[i]);
+		if(pricesConvertedToFloat[i] < previousPrice){
+			//attach screenshot to the report
+			this.report.error("Prices are not sorted").withAttachment("Screenshot", takeScreenshot(driver));
+			throw "\nArray is not sorted. Price " + pricesConvertedToFloat[i] + " is found before " + previousPrice + "\n" ;
+		}
+		previousPrice = pricesConvertedToFloat[i];
+	}
+	
+	if (pricesConvertedToFloat == previousPrice ){
+		//attach screenshot to the report
+		this.report.error("It is not possible to validate sorting").withAttachment("Screenshot", takeScreenshot(driver));
+		throw "\nAll products on this page have same price. It is not possible to validate that sorting works properly. You should verify manualy this test case." ;
+	}
 	
 });
 

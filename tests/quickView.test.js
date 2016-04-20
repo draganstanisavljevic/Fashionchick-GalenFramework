@@ -28,7 +28,6 @@ test("Close quick-view pop up", function () {
 	categoriesHeaderMenu.clickClothingButton();
 
 	var productsOverview = new ProductsOverviwPage(driver);	
-
 	productsOverview.productList.get(0).hoverProduct();
 	GalenPages.sleep(3000);
 		
@@ -50,22 +49,20 @@ test("Close quick-view pop up", function () {
 	}
 	finally{
 		if(popUpExist != "false"){
+			//attach screenshot to the report
 			this.report.error("Quick View Window is not closed").withAttachment("Screenshot", takeScreenshot(driver));
 			throw("Quick View Window is not closed");
 		}
 	}
-	
 	
 	var expectedUrl = url + urlSuffixAfterCancalingPopupWindow;
 	if(!driver.getCurrentUrl().equals(expectedUrl)){
 			this.report.error("Wrong Page is loaded after closing Quick View Window").withAttachment("Screenshot", takeScreenshot(driver));
 			throw("\nWrong Page is loaded after closing Quick View Window. \nExpected URL = " + expectedUrl + "\nCurrent URL = " + driver.getCurrentUrl()+"\n");
 	}
-
-		
+	
 	productsOverview.productList.get(0).hoverProduct();
 	GalenPages.sleep(1000);
-
 
 	var buyAtAfterClosingQuickView = productsOverview.productList.get(0).buyAtLinkText.attribute("href");
 	if(!buyAtAfterClosingQuickView.equals(buyAtBeforeOpeningQuickView)){

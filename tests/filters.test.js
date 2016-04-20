@@ -9,7 +9,7 @@ test("Checking filter button panel when popularity button is selected", function
         1.Open {$url}
 			
         Test environment:
-        Production		
+        All environments		
 		
         Expected result:
         Buttons are shown properly
@@ -42,7 +42,7 @@ test("Checking filter button panel when popularity buttons is selected and new b
         2.Hover button New
 					
         Test environment:
-        Production				
+        All environments				
 		
         Expected result:
         Buttons are shown properly
