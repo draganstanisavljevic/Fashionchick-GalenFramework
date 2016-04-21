@@ -1,1 +1,1 @@
-galen test tests/filters.test.js --htmlreport reports -Denv=prod
+galen test tests/ --htmlreport reports -Denv=prod -Durl="http://www.fashionchick.co.uk/"  -Dbrowser="firefox" -Dresolution="1400x1100"

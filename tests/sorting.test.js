@@ -42,13 +42,11 @@ test("Test sort by highest price", function () {
 		price = price + "";
 		//remove all except digits and '.'
 		price = price.replace(/[^0-9\\.]+/g, "");
-		console.log("price=" + price);
 		pricesConvertedToFloat.push(parseFloat(price));
 	}
 
 	var previousPrice = pricesConvertedToFloat[0];
 	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
-		console.log("pricesConvertedToFloat["+i+"]=" + pricesConvertedToFloat[i]);
 		if(pricesConvertedToFloat[i] > previousPrice){
 			//attach screenshot to the report
 			this.report.error("Prices are not sorted").withAttachment("Screenshot", takeScreenshot(driver));
@@ -88,13 +86,11 @@ test("Test sort by lowest price", function () {
 		price = price + "";
 		//remove all except digits and '.'
 		price = price.replace(/[^0-9\\.]+/g, "");
-		console.log("price=" + price);
 		pricesConvertedToFloat.push(parseFloat(price));
 	}
 
 	var previousPrice = pricesConvertedToFloat[0];
 	for (var i = 0; i < productsOverviewList.productList.size(); i++) {
-		console.log("pricesConvertedToFloat["+i+"]=" + pricesConvertedToFloat[i]);
 		if(pricesConvertedToFloat[i] < previousPrice){
 			//attach screenshot to the report
 			this.report.error("Prices are not sorted").withAttachment("Screenshot", takeScreenshot(driver));
